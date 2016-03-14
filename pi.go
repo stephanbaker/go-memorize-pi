@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"unicode"
 )
 
 const pidigits = "14159265358979323846264338327950288419716939937510"
@@ -34,7 +35,12 @@ func main() {
 func processUserInput(inputChan chan rune, successChan chan bool) {
 	var currentDigit = 0
 	for {
-		var input = fmt.Sprintf("%c", <-inputChan)
+		var r = <-inputChan
+		if !unicode.IsDigit(r) {
+			continue
+		}
+
+		var input = fmt.Sprintf("%c", r)
 		var expected = pidigits[currentDigit : currentDigit+1]
 		if input != expected {
 			fmt.Printf("Wrong Answer, the next digit was %s. Try again!\n", expected)
