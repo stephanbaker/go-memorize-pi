@@ -65,12 +65,12 @@ func readUserInput(inputChan chan rune) {
 }
 
 func printInstructions() {
-	fmt.Println("------------------")
-	fmt.Printf("Let's try to memorize the number Pi to %d decimal places.\n", numDigits)
-	fmt.Println("We'll start you off with the number 3.")
-	fmt.Println("Enter what you think the next digit is, and press enter.")
-	fmt.Println("Keep going until you win or get one wrong.  Have fun!")
-	fmt.Print("------------------\n\n3\n.\n")
+	fmt.Printf("------------------\n"+
+		"Let's try to memorize the number Pi to %d decimal places.\n"+
+		"We'll start you off with the number 3.\n"+
+		"Enter what you think the next digit is, and press enter.\n"+
+		"Keep going until you win or get one wrong.  Have fun!\n"+
+		"------------------\n\n3\n.\n", numDigits)
 }
 
 func printSuccess() {
