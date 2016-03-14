@@ -7,6 +7,8 @@ To play the game, download the repository, navigate to the directory, and issue 
 go run pi.go
 ```
 
+If you prefer, you can also use `go build` or `go install` to build the game as an executable.
+
 ## Command Line Parameters
 To set the number of digits you're trying to reach, use the `-n` flag.
 ```
